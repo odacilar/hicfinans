@@ -57,7 +57,7 @@ export default function Navbar() {
           <img
             src="/founder.jpg"
             alt="HiC Finans"
-            className="h-9 w-9 rounded-xl object-cover shadow-lg shadow-accent/20 transition-transform group-hover:scale-105"
+            className="h-10 w-10 rounded-full object-cover object-top shadow-lg shadow-accent/20 ring-2 ring-accent/30 transition-transform group-hover:scale-105"
           />
           <div className="hidden sm:flex flex-col">
             <span className="text-base font-bold tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
