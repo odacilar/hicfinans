@@ -29,18 +29,23 @@
 /* ── Light Theme Override ── */
 [data-theme="light"] {
   --color-primary: #F8FAFC;
-  --color-secondary: #F1F5F9;
+  --color-secondary: #E2E8F0;
   --color-surface: #FFFFFF;
-  --color-surface-hover: #F1F5F9;
-  --color-border: #E2E8F0;
+  --color-surface-hover: #EFF3F8;
+  --color-border: #CBD5E1;
   --color-text-primary: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #94A3B8;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
   --color-accent: #2563EB;
   --color-accent-hover: #1D4ED8;
-  --color-up: #059669;
-  --color-down: #DC2626;
-  --color-neutral: #9CA3AF;
+  --color-up: #047857;
+  --color-down: #B91C1C;
+  --color-neutral: #6B7280;
+  --color-score-value: #047857;
+  --color-score-future: #2563EB;
+  --color-score-past: #7C3AED;
+  --color-score-health: #D97706;
+  --color-score-dividend: #DC2626;
 }
 
 * {
@@ -192,8 +197,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Light theme Navbar overrides */
 [data-theme="light"] nav {
-  background: rgba(248, 250, 252, 0.85);
-  border-bottom-color: rgba(226, 232, 240, 0.8);
+  background: rgba(248, 250, 252, 0.95);
+  border-bottom-color: rgba(203, 213, 225, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* Light theme footer */
