@@ -28,17 +28,17 @@ const ROW2 = [
 
 function NavRow({ items, pathname }: { items: typeof ROW1; pathname: string }) {
   return (
-    <div className="flex items-center gap-1 rounded-xl bg-surface/50 p-1">
+    <div className="nav-row flex items-center gap-1 rounded-xl p-1">
       {items.map((item) => {
         const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
         return (
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+            className={`nav-link flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200 whitespace-nowrap ${
               isActive
                 ? "bg-accent/15 text-accent shadow-sm shadow-accent/10"
-                : "text-text-muted hover:bg-surface-hover hover:text-text-primary"
+                : "hover:bg-surface-hover hover:text-text-primary"
             }`}
           >
             <span className="text-xs">{item.icon}</span>
