@@ -358,7 +358,7 @@ function DonutChart({
         className="h-full w-full rounded-full"
         style={{ background: `conic-gradient(${gradient})` }}
       />
-      <div className="absolute inset-3 rounded-full bg-primary" />
+      <div className="absolute inset-3 rounded-full bg-surface" />
     </div>
   );
 }

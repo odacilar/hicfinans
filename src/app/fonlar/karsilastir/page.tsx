@@ -361,7 +361,7 @@ export default function FonKarsilastirPage() {
             {/* Risk-Return Scatter */}
             <div className="glass-card p-5">
               <h3 className="text-sm font-bold mb-4">Risk — Getiri Haritası</h3>
-              <div className="relative h-64 border border-border/30 rounded-xl overflow-hidden bg-primary/30">
+              <div className="relative h-64 border border-border/30 rounded-xl overflow-hidden bg-surface/40">
                 {/* Axes labels */}
                 <span className="absolute bottom-1 left-1/2 -translate-x-1/2 text-[9px] text-text-muted">Volatilite →</span>
                 <span className="absolute left-1 top-1/2 -translate-y-1/2 -rotate-90 text-[9px] text-text-muted">Getiri →</span>

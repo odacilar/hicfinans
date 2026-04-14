@@ -128,7 +128,7 @@ export default function TarayiciPage() {
           {FILTERS.map((f) => {
             const current = filterValues[f.field];
             return (
-              <div key={f.field} className="rounded-xl bg-primary/40 p-3">
+              <div key={f.field} className="rounded-xl bg-surface/50 p-3">
                 <div className="mb-2 flex items-center justify-between">
                   <label className="text-xs font-medium text-text-secondary">{f.label}</label>
                   {current && (

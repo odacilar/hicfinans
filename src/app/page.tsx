@@ -116,14 +116,14 @@ function TopScores() {
             <Link
               key={s.ticker}
               href={`/hisseler/${s.ticker}`}
-              className="group flex items-center gap-3 rounded-xl bg-primary/40 p-3 transition-all hover:bg-primary/70"
+              className="group flex items-center gap-3 rounded-xl bg-surface/50 p-3 transition-all hover:bg-surface-hover"
             >
               {/* Score ring */}
               <div
                 className="score-ring relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full p-[3px]"
                 style={{ "--ring-color": "#10B981", "--ring-pct": pct } as React.CSSProperties}
               >
-                <div className="flex h-full w-full items-center justify-center rounded-full bg-primary">
+                <div className="flex h-full w-full items-center justify-center rounded-full bg-surface">
                   <span className="font-mono text-sm font-bold text-score-value">{s.overallScore.toFixed(1)}</span>
                 </div>
               </div>

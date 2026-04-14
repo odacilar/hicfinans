@@ -167,7 +167,7 @@ function KapAccordionCard({ news }: { news: typeof MOCK_KAP_NEWS[number] }) {
               {ai.financialHighlights && ai.financialHighlights.length > 0 && (
                 <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
                   {ai.financialHighlights.map((h, i) => (
-                    <div key={i} className="rounded-lg bg-primary/60 p-2.5">
+                    <div key={i} className="rounded-lg bg-surface/50 p-2.5">
                       <span className="text-[10px] text-text-muted block">{h.metric}</span>
                       <span className="font-mono text-sm font-semibold text-text-primary">{h.value}</span>
                       {h.change && (

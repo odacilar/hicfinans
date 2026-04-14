@@ -130,7 +130,7 @@ function ScoreRing({ score, size = 48 }: { score: number; size?: number }) {
       }}
     >
       <div
-        className="rounded-full bg-primary flex items-center justify-center"
+        className="rounded-full bg-surface flex items-center justify-center"
         style={{ width: size - 8, height: size - 8 }}
       >
         <span className="font-mono text-sm font-bold" style={{ color }}>

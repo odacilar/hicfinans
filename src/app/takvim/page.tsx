@@ -44,7 +44,7 @@ const IMPORTANCE_OPTIONS: { key: EventImportance | "all"; label: string; color: 
   { key: "all", label: "Tumunu Goster", color: "" },
   { key: "yüksek", label: "Yuksek", color: "bg-red-500" },
   { key: "orta", label: "Orta", color: "bg-yellow-500" },
-  { key: "düşük", label: "Dusuk", color: "bg-gray-500" },
+  { key: "düşük", label: "Dusuk", color: "bg-neutral" },
 ];
 
 function getMonth(iso: string) {
@@ -111,7 +111,7 @@ function importanceDots(imp: EventImportance) {
       ? "bg-red-500"
       : imp === "orta"
         ? "bg-yellow-500"
-        : "bg-gray-500";
+        : "bg-neutral";
   return (
     <span className="inline-flex items-center gap-0.5">
       {Array.from({ length: count }, (_, i) => (
@@ -124,7 +124,7 @@ function importanceDots(imp: EventImportance) {
 function importanceBorder(imp: EventImportance) {
   if (imp === "yüksek") return "border-l-2 border-l-red-500/60";
   if (imp === "orta") return "border-l-2 border-l-yellow-500/40";
-  return "border-l-2 border-l-gray-600/30";
+  return "border-l-2 border-l-neutral/30";
 }
 
 function actualColor(event: EconomicEvent) {
@@ -152,8 +152,8 @@ function actualColor(event: EconomicEvent) {
 function impactCellClass(level: "yüksek" | "orta" | "düşük" | undefined) {
   if (level === "yüksek") return "bg-red-500/20 text-red-400";
   if (level === "orta") return "bg-yellow-500/15 text-yellow-400";
-  if (level === "düşük") return "bg-gray-500/10 text-gray-500";
-  return "bg-transparent text-gray-700";
+  if (level === "düşük") return "bg-neutral/10 text-neutral";
+  return "bg-transparent text-text-muted";
 }
 
 function impactLabel(level: "yüksek" | "orta" | "düşük" | undefined) {

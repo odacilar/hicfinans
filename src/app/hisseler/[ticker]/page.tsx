@@ -18,7 +18,7 @@ function SectionCard({ title, children, className = "" }: { title: string; child
 
 function StatBox({ label, value, sub, color }: { label: string; value: string; sub?: string; color?: string }) {
   return (
-    <div className="flex flex-col gap-0.5 rounded-xl bg-primary/60 p-3">
+    <div className="flex flex-col gap-0.5 rounded-xl bg-surface/50 p-3">
       <span className="text-[11px] text-text-muted">{label}</span>
       <span className={`font-mono text-sm font-semibold ${color ?? ""}`}>{value}</span>
       {sub && <span className="text-[10px] text-text-muted">{sub}</span>}
@@ -74,7 +74,7 @@ export default async function StockDetailPage({ params }: { params: Promise<{ ti
             <div>
               <h1 className="flex items-center gap-2 text-2xl font-bold">
                 {upperTicker}
-                <span className="rounded-lg bg-primary/60 px-2.5 py-0.5 text-xs font-medium text-text-secondary">
+                <span className="rounded-lg bg-surface/50 px-2.5 py-0.5 text-xs font-medium text-text-secondary">
                   {detail.sector}
                 </span>
               </h1>
@@ -201,7 +201,7 @@ export default async function StockDetailPage({ params }: { params: Promise<{ ti
       {/* Analyst Consensus */}
       <SectionCard title="Analist Tavsiyeleri">
         {/* Consensus summary bar */}
-        <div className="mb-5 rounded-xl bg-primary/60 p-4">
+        <div className="mb-5 rounded-xl bg-surface/50 p-4">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
               <div>

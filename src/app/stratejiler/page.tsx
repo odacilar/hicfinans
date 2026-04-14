@@ -26,12 +26,12 @@ const TABS: TabConfig[] = [
   {
     key: "canslim",
     label: "CANSLIM",
-    subtitle: "O'Neil B\u00fcy\u00fcme",
+    subtitle: "O'Neil Büyüme",
     color: "blue",
     bgGradient: "from-blue-600 to-blue-800",
     ringColor: "#3B82F6",
     description:
-      "William O\u2019Neil\u2019in CANSLIM metodolojisi: \u00c7eyreklik k\u00e2r b\u00fcy\u00fcmesi, y\u0131ll\u0131k b\u00fcy\u00fcme, yenilik, arz-talep, sekt\u00f6rel liderlik, kurumsal sahiplik ve piyasa y\u00f6n\u00fc kriterlerini birle\u015ftirir. B\u00fcy\u00fcme hisselerini tespit etmek i\u00e7in ideal.",
+      "William O\u2019Neil\u2019in CANSLIM metodolojisi: Çeyreklik kâr büyümesi, yıllık büyüme, yenilik, arz-talep, sektörel liderlik, kurumsal sahiplik ve piyasa yönü kriterlerini birleştirir. Büyüme hisselerini tespit etmek için ideal.",
     sortFn: (a, b) => b.canslim.total - a.canslim.total,
     getScore: (s) => s.canslim.total,
     getGrade: (s) => s.canslim.grade,
@@ -39,13 +39,13 @@ const TABS: TabConfig[] = [
   },
   {
     key: "buffett",
-    label: "Buffett De\u011fer",
-    subtitle: "De\u011fer Yat\u0131r\u0131m\u0131",
+    label: "Buffett Değer",
+    subtitle: "Değer Yatırımı",
     color: "emerald",
     bgGradient: "from-emerald-600 to-emerald-800",
     ringColor: "#10B981",
     description:
-      "Warren Buffett\u2019\u0131n de\u011fer yat\u0131r\u0131m felsefesi: S\u00fcrd\u00fcr\u00fclebilir rekabet avantaj\u0131 (moat), g\u00fc\u00e7l\u00fc kazan\u00e7, d\u00fc\u015f\u00fck bor\u00e7, y\u00fcksek k\u00e2r marjlar\u0131, makul de\u011ferleme ve g\u00fc\u00e7l\u00fc nakit \u00fcretimi arar. Uzun vadeli, d\u00fc\u015f\u00fck riskli yat\u0131r\u0131mlar i\u00e7in idealdir.",
+      "Warren Buffett\u2019ın değer yatırım felsefesi: Sürdürülebilir rekabet avantajı (moat), güçlü kazanç, düşük borç, yüksek kâr marjları, makul değerleme ve güçlü nakit üretimi arar. Uzun vadeli, düşük riskli yatırımlar için idealdir.",
     sortFn: (a, b) => b.buffett.total - a.buffett.total,
     getScore: (s) => s.buffett.total,
     getGrade: (s) => s.buffett.grade,
@@ -53,22 +53,22 @@ const TABS: TabConfig[] = [
   },
   {
     key: "tech",
-    label: "Teknoloji Rasyolar\u0131",
-    subtitle: "B\u00fcy\u00fcme Metrikleri",
+    label: "Teknoloji Rasyoları",
+    subtitle: "Büyüme Metrikleri",
     color: "violet",
     bgGradient: "from-violet-600 to-violet-800",
     ringColor: "#8B5CF6",
     description:
-      "Teknoloji ve b\u00fcy\u00fcme hisseleri i\u00e7in \u00f6zel rasyolar: PEG oran\u0131, Rule of 40, EV/Gelir, b\u00fcy\u00fcme h\u0131z\u0131 ve k\u00e2rl\u0131l\u0131k dengesi. Y\u00fcksek b\u00fcy\u00fcmeli \u015firketlerin de\u011ferlemesini \u00f6l\u00e7mek i\u00e7in uygundur.",
+      "Teknoloji ve büyüme hisseleri için özel rasyolar: PEG oranı, Rule of 40, EV/Gelir, büyüme hızı ve kârlılık dengesi. Yüksek büyümeli şirketlerin değerlemesini ölçmek için uygundur.",
     sortFn: (a, b) => b.techRatios.overallScore - a.techRatios.overallScore,
     getScore: (s) => s.techRatios.overallScore,
     getGrade: (s) => s.techRatios.grade,
     getVerdict: (s) =>
       s.techRatios.overallScore >= 75
-        ? "G\u00fc\u00e7l\u00fc b\u00fcy\u00fcme-de\u011ferleme dengesi"
+        ? "Güçlü büyüme-değerleme dengesi"
         : s.techRatios.overallScore >= 50
-        ? "Orta seviye \u2014 baz\u0131 metrikler iyi"
-        : "Zay\u0131f teknoloji rasyolar\u0131",
+        ? "Orta seviye — bazı metrikler iyi"
+        : "Zayıf teknoloji rasyoları",
     getExtra: (s) =>
       `PEG: ${s.techRatios.pegRatio.toFixed(2)} | R40: ${s.techRatios.ruleOf40.toFixed(1)}`,
   },
@@ -86,13 +86,13 @@ const GRADE_STYLES: Record<string, { bg: string; text: string }> = {
 
 const PODIUM_BORDERS = [
   "border-yellow-500/60 shadow-yellow-500/10",   // 1st — gold
-  "border-slate-300/40 shadow-slate-300/10",      // 2nd — silver
+  "border-border shadow-border/10",      // 2nd — silver
   "border-amber-700/40 shadow-amber-700/10",      // 3rd — bronze
 ];
 
 const PODIUM_BADGES = [
   { emoji: "1", bg: "bg-gradient-to-br from-yellow-500 to-amber-600", text: "text-black" },
-  { emoji: "2", bg: "bg-gradient-to-br from-slate-300 to-slate-400", text: "text-black" },
+  { emoji: "2", bg: "bg-gradient-to-br from-gray-400 to-gray-500", text: "text-black" },
   { emoji: "3", bg: "bg-gradient-to-br from-amber-700 to-amber-800", text: "text-white" },
 ];
 
@@ -157,11 +157,11 @@ export default function StratejilerPage() {
         {/* Header */}
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="gradient-text">Yat\u0131r\u0131m Stratejileri</span>
+            <span className="gradient-text">Yatırım Stratejileri</span>
           </h1>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base">
-            \u00dc\u00e7 farkl\u0131 yat\u0131r\u0131m metodolojisiyle BIST hisselerini analiz edin.
-            Her strateji, farkl\u0131 yat\u0131r\u0131mc\u0131 profiline hitap eder.
+            Üç farklı yatırım metodolojisiyle BIST hisselerini analiz edin.
+            Her strateji, farklı yatırımcı profiline hitap eder.
           </p>
         </div>
 
@@ -219,10 +219,10 @@ export default function StratejilerPage() {
                 <tr className="border-b border-border/50 text-[11px] uppercase tracking-wider text-text-muted">
                   <th className="px-4 py-4 text-center font-semibold w-12">#</th>
                   <th className="px-4 py-4 text-left font-semibold">Hisse</th>
-                  <th className="hidden px-4 py-4 text-left font-semibold md:table-cell">Sekt\u00f6r</th>
+                  <th className="hidden px-4 py-4 text-left font-semibold md:table-cell">Sektör</th>
                   <th className="px-4 py-4 text-center font-semibold">Skor</th>
                   <th className="px-4 py-4 text-center font-semibold">Not</th>
-                  <th className="hidden px-4 py-4 text-left font-semibold lg:table-cell">De\u011ferlendirme</th>
+                  <th className="hidden px-4 py-4 text-left font-semibold lg:table-cell">Değerlendirme</th>
                   {tab.getExtra && (
                     <th className="hidden px-4 py-4 text-center font-semibold sm:table-cell">Detay</th>
                   )}
@@ -320,8 +320,8 @@ export default function StratejilerPage() {
 
         {/* Disclaimer */}
         <p className="text-center text-[10px] leading-relaxed text-text-muted/60">
-          Bu sayfa yat\u0131r\u0131m tavsiyesi niteli\u011fi ta\u015f\u0131maz. G\u00f6sterilen skorlar algoritmik hesaplamalara dayan\u0131r
-          ve yat\u0131r\u0131m karar\u0131 i\u00e7in tek ba\u015f\u0131na yeterli de\u011fildir. Yat\u0131r\u0131m kararlar\u0131 i\u00e7in profesyonel dan\u0131\u015fmanl\u0131k al\u0131n\u0131z.
+          Bu sayfa yatırım tavsiyesi niteliği taşımaz. Gösterilen skorlar algoritmik hesaplamalara dayanır
+          ve yatırım kararı için tek başına yeterli değildir. Yatırım kararları için profesyonel danışmanlık alınız.
         </p>
       </div>
     </div>

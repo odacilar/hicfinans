@@ -309,3 +309,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Tooltip overrides for Recharts in light mode are handled inline */
+
+/* ── Light theme: Form elements ── */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] select:focus,
+[data-theme="light"] textarea:focus {
+  border-color: #3B82F6 !important;
+  outline-color: #3B82F6;
+}
+
+/* ── Light theme: opacity-based bg-primary/surface overrides ── */
+[data-theme="light"] [class*="bg-primary/"] {
+  background: rgba(241, 245, 249, 0.7) !important;
+}
+
+[data-theme="light"] [class*="bg-surface/"] {
+  background: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* ── Light theme: Recharts bar fills ── */
+[data-theme="light"] .recharts-bar-rectangle path[fill="#334155"] {
+  fill: #CBD5E1 !important;
+}

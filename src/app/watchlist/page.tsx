@@ -340,7 +340,7 @@ export default function WatchlistPage() {
             <input
               type="text"
               placeholder="Hisse ara (ornegin THYAO)..."
-              className="w-full rounded-lg border border-border bg-primary/60 px-3 py-2 text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
+              className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
@@ -984,7 +984,7 @@ export default function WatchlistPage() {
               {(() => {
                 const stock = stockByTicker(alertModalTicker);
                 return stock ? (
-                  <div className="mb-4 flex items-center justify-between rounded-lg border border-border bg-primary/40 px-4 py-3">
+                  <div className="mb-4 flex items-center justify-between rounded-lg border border-border bg-surface/50 px-4 py-3">
                     <div>
                       <span className="font-mono font-bold text-accent">
                         {stock.ticker}
@@ -1018,7 +1018,7 @@ export default function WatchlistPage() {
                     className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                       alertType === "above"
                         ? "border-up/50 bg-up/10 text-up"
-                        : "border-border bg-primary/40 text-text-muted hover:border-border/80"
+                        : "border-border bg-surface/50 text-text-muted hover:border-border/80"
                     }`}
                   >
                     Ustune Cikarsa
@@ -1028,7 +1028,7 @@ export default function WatchlistPage() {
                     className={`flex-1 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
                       alertType === "below"
                         ? "border-down/50 bg-down/10 text-down"
-                        : "border-border bg-primary/40 text-text-muted hover:border-border/80"
+                        : "border-border bg-surface/50 text-text-muted hover:border-border/80"
                     }`}
                   >
                     Altina Duserse
@@ -1045,7 +1045,7 @@ export default function WatchlistPage() {
                   type="number"
                   step="0.01"
                   min="0"
-                  className="w-full rounded-lg border border-border bg-primary/60 px-3 py-2 text-sm font-mono text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
+                  className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm font-mono text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
                   placeholder="0.00"
                   value={alertTargetPrice}
                   onChange={(e) => setAlertTargetPrice(e.target.value)}

@@ -364,7 +364,7 @@ export default function PortfolioPage() {
               <input
                 type="text"
                 placeholder="Hisse ara (ornegin THYAO)..."
-                className="w-full rounded-lg border border-border bg-primary/60 px-3 py-2 text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
+                className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
                 value={selectedTicker ? selectedTicker : searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
@@ -410,7 +410,7 @@ export default function PortfolioPage() {
                 type="number"
                 min="1"
                 placeholder="100"
-                className="w-full rounded-lg border border-border bg-primary/60 px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
+                className="w-full rounded-lg border border-border bg-surface px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
                 value={quantity}
                 onChange={(e) => setQuantity(e.target.value)}
               />
@@ -423,7 +423,7 @@ export default function PortfolioPage() {
                 min="0.01"
                 step="0.01"
                 placeholder="280.00"
-                className="w-full rounded-lg border border-border bg-primary/60 px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
+                className="w-full rounded-lg border border-border bg-surface px-3 py-2 font-mono text-sm text-text-primary placeholder:text-text-muted/50 outline-none focus:border-accent/50 transition-colors"
                 value={buyPrice}
                 onChange={(e) => setBuyPrice(e.target.value)}
               />
@@ -671,7 +671,7 @@ export default function PortfolioPage() {
                     className="relative h-40 w-40 shrink-0 rounded-full"
                     style={{ background: conicGradient }}
                   >
-                    <div className="absolute inset-6 flex items-center justify-center rounded-full bg-primary">
+                    <div className="absolute inset-6 flex items-center justify-center rounded-full bg-surface">
                       <span className="font-mono text-xs font-bold text-text-muted">
                         {sectorBreakdown.length} Sektor
                       </span>
@@ -792,7 +792,7 @@ export default function PortfolioPage() {
                       } as React.CSSProperties
                     }
                   >
-                    <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-primary">
+                    <div className="flex h-full w-full flex-col items-center justify-center rounded-full bg-surface">
                       <span className="font-mono text-3xl font-bold text-score-value">
                         {portfolioScore.toFixed(1)}
                       </span>
@@ -811,7 +811,7 @@ export default function PortfolioPage() {
               <h3 className="mb-4 text-sm font-bold">Risk Analizi</h3>
               <div className="grid gap-4 sm:grid-cols-3">
                 {/* Diversifikasyon skoru */}
-                <div className="rounded-xl bg-primary/40 p-4">
+                <div className="rounded-xl bg-surface/50 p-4">
                   <div className="text-xs text-text-muted mb-2">Cesitlendirme Skoru</div>
                   <div className="flex items-center gap-3">
                     <div className="flex-1 h-2 rounded-full bg-border/50 overflow-hidden">
@@ -835,7 +835,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* En buyuk pozisyon */}
-                <div className="rounded-xl bg-primary/40 p-4">
+                <div className="rounded-xl bg-surface/50 p-4">
                   <div className="text-xs text-text-muted mb-2">
                     En Buyuk Pozisyon Agirligi
                   </div>
@@ -852,7 +852,7 @@ export default function PortfolioPage() {
                 </div>
 
                 {/* Sektor yogunlasmasi */}
-                <div className="rounded-xl bg-primary/40 p-4">
+                <div className="rounded-xl bg-surface/50 p-4">
                   <div className="text-xs text-text-muted mb-2">Sektor Yogunlasmasi</div>
                   {riskAnalysis.topSector && (
                     <>
@@ -872,7 +872,7 @@ export default function PortfolioPage() {
                 {riskAnalysis.suggestions.map((s, i) => (
                   <div
                     key={i}
-                    className="flex items-start gap-2 rounded-lg bg-primary/30 px-3 py-2"
+                    className="flex items-start gap-2 rounded-lg bg-surface/40 px-3 py-2"
                   >
                     <span className="mt-0.5 text-xs text-accent">&#9679;</span>
                     <span className="text-xs text-text-secondary">{s}</span>
