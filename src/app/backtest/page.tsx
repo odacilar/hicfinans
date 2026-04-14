@@ -578,15 +578,15 @@ export default function BacktestPage() {
                     <stop offset="95%" stopColor={strategyColor} stopOpacity={0} />
                   </linearGradient>
                 </defs>
-                <CartesianGrid strokeDasharray="3 3" stroke="#1e2642" />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" />
                 <XAxis
                   dataKey="month"
-                  tick={{ fill: "#64748B", fontSize: 11 }}
+                  tick={{ fill: "var(--color-text-muted)", fontSize: 11 }}
                   tickLine={false}
                   interval="preserveStartEnd"
                 />
                 <YAxis
-                  tick={{ fill: "#64748B", fontSize: 11 }}
+                  tick={{ fill: "var(--color-text-muted)", fontSize: 11 }}
                   tickLine={false}
                   axisLine={false}
                   tickFormatter={(v: number) =>

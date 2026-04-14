@@ -318,7 +318,7 @@ export default function PortfolioPage() {
 
   // ── Conic gradient for donut ───────────────────────────
   const conicGradient = useMemo(() => {
-    if (sectorBreakdown.length === 0) return "conic-gradient(#1e2642 0% 100%)";
+    if (sectorBreakdown.length === 0) return "conic-gradient(var(--color-border) 0% 100%)";
     let accumulated = 0;
     const stops = sectorBreakdown.map((s) => {
       const start = accumulated;

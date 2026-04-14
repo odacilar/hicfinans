@@ -169,12 +169,12 @@ export default function PriceChart({ data }: PriceChartProps) {
   };
 
   const tooltipStyle = {
-    background: "#1E293B",
-    border: "1px solid #334155",
+    background: "var(--color-surface)",
+    border: "1px solid var(--color-border)",
     borderRadius: 10,
     fontSize: 11,
-    color: "#F8FAFC",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+    color: "var(--color-text-primary)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.15)",
   };
 
   return (
@@ -235,10 +235,10 @@ export default function PriceChart({ data }: PriceChartProps) {
               </linearGradient>
             )}
           </defs>
-          <CartesianGrid stroke="#334155" strokeDasharray="3 3" strokeOpacity={0.3} />
+          <CartesianGrid stroke="var(--color-border)" strokeDasharray="3 3" strokeOpacity={0.3} />
           <XAxis
             dataKey="date"
-            tick={{ fill: "#64748B", fontSize: 10 }}
+            tick={{ fill: "var(--color-text-muted)", fontSize: 10 }}
             tickFormatter={dateFormatter}
             tickLine={false}
             axisLine={false}
@@ -246,7 +246,7 @@ export default function PriceChart({ data }: PriceChartProps) {
           />
           <YAxis
             domain={[minPrice, maxPrice]}
-            tick={{ fill: "#64748B", fontSize: 10 }}
+            tick={{ fill: "var(--color-text-muted)", fontSize: 10 }}
             tickLine={false}
             axisLine={false}
             width={55}
@@ -323,9 +323,9 @@ export default function PriceChart({ data }: PriceChartProps) {
           </div>
           <ResponsiveContainer width="100%" height={80}>
             <LineChart data={techData}>
-              <CartesianGrid stroke="#334155" strokeDasharray="3 3" strokeOpacity={0.2} />
+              <CartesianGrid stroke="var(--color-border)" strokeDasharray="3 3" strokeOpacity={0.2} />
               <XAxis dataKey="date" hide />
-              <YAxis domain={[0, 100]} tick={{ fill: "#64748B", fontSize: 9 }} tickLine={false} axisLine={false} width={30} />
+              <YAxis domain={[0, 100]} tick={{ fill: "var(--color-text-muted)", fontSize: 9 }} tickLine={false} axisLine={false} width={30} />
               <ReferenceLine y={70} stroke="#EF4444" strokeDasharray="3 3" strokeOpacity={0.5} />
               <ReferenceLine y={30} stroke="#10B981" strokeDasharray="3 3" strokeOpacity={0.5} />
               <ReferenceLine y={50} stroke="#64748B" strokeDasharray="2 4" strokeOpacity={0.3} />
@@ -346,9 +346,9 @@ export default function PriceChart({ data }: PriceChartProps) {
           <span className="text-[10px] font-semibold text-[#3B82F6] mb-1 block">MACD (12, 26, 9)</span>
           <ResponsiveContainer width="100%" height={90}>
             <BarChart data={techData}>
-              <CartesianGrid stroke="#334155" strokeDasharray="3 3" strokeOpacity={0.2} />
+              <CartesianGrid stroke="var(--color-border)" strokeDasharray="3 3" strokeOpacity={0.2} />
               <XAxis dataKey="date" hide />
-              <YAxis tick={{ fill: "#64748B", fontSize: 9 }} tickLine={false} axisLine={false} width={30} />
+              <YAxis tick={{ fill: "var(--color-text-muted)", fontSize: 9 }} tickLine={false} axisLine={false} width={30} />
               <ReferenceLine y={0} stroke="#64748B" strokeOpacity={0.3} />
               <Tooltip
                 contentStyle={{ ...tooltipStyle, borderRadius: 8 }}

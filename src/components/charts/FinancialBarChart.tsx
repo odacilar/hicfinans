@@ -27,12 +27,12 @@ export default function FinancialBarChart({ data }: FinancialBarChartProps) {
       <BarChart data={chartData}>
         <XAxis
           dataKey="period"
-          tick={{ fill: "#64748B", fontSize: 10 }}
+          tick={{ fill: "var(--color-text-muted)", fontSize: 10 }}
           tickLine={false}
           axisLine={false}
         />
         <YAxis
-          tick={{ fill: "#64748B", fontSize: 10 }}
+          tick={{ fill: "var(--color-text-muted)", fontSize: 10 }}
           tickLine={false}
           axisLine={false}
           width={50}
@@ -40,11 +40,11 @@ export default function FinancialBarChart({ data }: FinancialBarChartProps) {
         />
         <Tooltip
           contentStyle={{
-            background: "#1E293B",
-            border: "1px solid #334155",
+            background: "var(--color-surface)",
+            border: "1px solid var(--color-border)",
             borderRadius: 8,
             fontSize: 12,
-            color: "#F8FAFC",
+            color: "var(--color-text-primary)",
           }}
           formatter={(value, name) => [
             `${Number(value).toFixed(1)} Mr₺`,

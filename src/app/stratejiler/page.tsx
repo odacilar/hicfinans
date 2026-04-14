@@ -110,7 +110,7 @@ function ScoreRing({ score, maxScore, color, size = 44 }: { score: number; maxSc
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="rgba(30, 38, 66, 0.5)"
+          stroke="var(--color-border)"
           strokeWidth={3}
         />
         <circle

@@ -241,7 +241,71 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Light theme footer */
 [data-theme="light"] footer {
-  border-top-color: rgba(226, 232, 240, 0.6);
+  border-top-color: #E2E8F0;
+}
+
+/* ── Light theme: global page-level fixes ── */
+
+/* All Recharts grids/axes */
+[data-theme="light"] .recharts-cartesian-grid line {
+  stroke: #E2E8F0 !important;
+}
+
+[data-theme="light"] .recharts-xAxis .recharts-cartesian-axis-tick-value,
+[data-theme="light"] .recharts-yAxis .recharts-cartesian-axis-tick-value {
+  fill: #475569 !important;
+}
+
+/* Recharts tooltip */
+[data-theme="light"] .recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+/* Fix hardcoded dark SVG strokes */
+[data-theme="light"] svg circle[stroke="rgba(30, 38, 66, 0.5)"] {
+  stroke: #CBD5E1 !important;
+}
+
+/* All bg-surface/50 outside nav too */
+[data-theme="light"] .bg-surface\/50 {
+  background: #F8FAFC !important;
+}
+
+/* Gradient backgrounds on buttons — keep text white readable */
+[data-theme="light"] .bg-gradient-to-r.text-white,
+[data-theme="light"] .bg-accent.text-white {
+  color: #FFFFFF !important;
+}
+
+/* Fix gradient-text on headings (ensure dark text) */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: #0F172A;
+}
+
+/* Table borders */
+[data-theme="light"] table,
+[data-theme="light"] th,
+[data-theme="light"] td {
+  border-color: #E2E8F0 !important;
+}
+
+[data-theme="light"] th {
+  background: #F8FAFC !important;
+  color: #334155 !important;
+}
+
+[data-theme="light"] td {
+  color: #1E293B !important;
+}
+
+/* Any remaining hardcoded dark backgrounds */
+[data-theme="light"] [class*="bg-\[#1"],
+[data-theme="light"] [class*="bg-\[#0"] {
+  background: #F8FAFC !important;
 }
 
 /* Tooltip overrides for Recharts in light mode are handled inline */
