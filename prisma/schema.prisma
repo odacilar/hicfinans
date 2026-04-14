@@ -1,0 +1,139 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Company {
+  id          String   @id @default(cuid())
+  ticker      String   @unique
+  name        String
+  sector      String
+  subSector   String?
+  marketCap   Float?
+  listingDate DateTime?
+  website     String?
+  logo        String?
+
+  prices         PriceData[]
+  financials     FinancialData[]
+  scores         StockScore[]
+  kapNews        KapNews[]
+  analystRatings AnalystRating[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PriceData {
+  id            String   @id @default(cuid())
+  companyId     String
+  company       Company  @relation(fields: [companyId], references: [id])
+  date          DateTime
+  open          Float
+  high          Float
+  low           Float
+  close         Float
+  volume        BigInt
+  adjustedClose Float?
+
+  @@unique([companyId, date])
+  @@index([companyId])
+  @@index([date])
+}
+
+model FinancialData {
+  id            String   @id @default(cuid())
+  companyId     String
+  company       Company  @relation(fields: [companyId], references: [id])
+  period        String
+  periodEndDate DateTime
+
+  revenue         Float?
+  grossProfit     Float?
+  operatingProfit Float?
+  ebitda          Float?
+  netIncome       Float?
+  eps             Float?
+
+  totalAssets      Float?
+  totalLiabilities Float?
+  totalEquity      Float?
+  cash             Float?
+  totalDebt        Float?
+  netDebt          Float?
+
+  operatingCashFlow Float?
+  capex             Float?
+  freeCashFlow      Float?
+  dividendPaid      Float?
+
+  peRatio       Float?
+  pbRatio       Float?
+  evToEbitda    Float?
+  debtToEquity  Float?
+  currentRatio  Float?
+  roe           Float?
+  roa           Float?
+  grossMargin   Float?
+  netMargin     Float?
+  dividendYield Float?
+
+  @@unique([companyId, period])
+  @@index([companyId])
+}
+
+model StockScore {
+  id           String   @id @default(cuid())
+  companyId    String
+  company      Company  @relation(fields: [companyId], references: [id])
+  calculatedAt DateTime @default(now())
+
+  valueScore    Float
+  futureScore   Float
+  pastScore     Float
+  healthScore   Float
+  dividendScore Float
+  overallScore  Float
+
+  scoreDetails Json?
+
+  @@index([companyId])
+}
+
+model KapNews {
+  id          String   @id @default(cuid())
+  companyId   String?
+  company     Company? @relation(fields: [companyId], references: [id])
+  kapId       String   @unique
+  title       String
+  content     String?
+  summary     String?
+  category    String?
+  publishedAt DateTime
+  url         String
+
+  @@index([companyId])
+  @@index([publishedAt])
+  @@index([category])
+}
+
+model AnalystRating {
+  id           String   @id @default(cuid())
+  companyId    String
+  company      Company  @relation(fields: [companyId], references: [id])
+  source       String
+  rating       String
+  targetPrice  Float?
+  currentPrice Float?
+  upside       Float?
+  reportDate   DateTime
+  reportUrl    String?
+  analystName  String?
+
+  @@index([companyId])
+  @@index([reportDate])
+}

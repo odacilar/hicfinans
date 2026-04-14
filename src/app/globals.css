@@ -1,26 +1,204 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ── Dark Theme (default) ── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: #0a0e1a;
+  --color-secondary: #111827;
+  --color-accent: #3B82F6;
+  --color-accent-hover: #2563EB;
+  --color-surface: #1a1f35;
+  --color-surface-hover: #252d47;
+  --color-border: #1e2642;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #64748B;
+  --color-up: #10B981;
+  --color-down: #EF4444;
+  --color-neutral: #6B7280;
+  --color-score-value: #10B981;
+  --color-score-future: #3B82F6;
+  --color-score-past: #8B5CF6;
+  --color-score-health: #F59E0B;
+  --color-score-dividend: #EF4444;
+
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Light Theme Override ── */
+[data-theme="light"] {
+  --color-primary: #F8FAFC;
+  --color-secondary: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-surface-hover: #F1F5F9;
+  --color-border: #E2E8F0;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-up: #059669;
+  --color-down: #DC2626;
+  --color-neutral: #9CA3AF;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-mono, [data-mono] {
+  font-family: var(--font-mono);
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(26, 31, 53, 0.8), rgba(17, 24, 39, 0.6));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.08);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.8));
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.06), 0 8px 32px rgba(0, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .glass-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08), 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Glow effects */
+.glow-up { box-shadow: 0 0 20px rgba(16, 185, 129, 0.15); }
+.glow-down { box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); }
+.glow-accent { box-shadow: 0 0 24px rgba(59, 130, 246, 0.12); }
+
+[data-theme="light"] .glow-up { box-shadow: 0 0 16px rgba(5, 150, 105, 0.12); }
+[data-theme="light"] .glow-down { box-shadow: 0 0 16px rgba(220, 38, 38, 0.12); }
+[data-theme="light"] .glow-accent { box-shadow: 0 0 16px rgba(37, 99, 235, 0.1); }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #F1F5F9, #94A3B8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .gradient-text {
+  background: linear-gradient(135deg, #0F172A, #475569);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #60A5FA, #3B82F6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="light"] .gradient-text-accent {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient background */
+.hero-gradient {
+  background: radial-gradient(ellipse at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(16, 185, 129, 0.04) 0%, transparent 50%);
+}
+
+[data-theme="light"] .hero-gradient {
+  background: radial-gradient(ellipse at 20% 50%, rgba(37, 99, 235, 0.04) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 50%),
+              radial-gradient(ellipse at 50% 80%, rgba(5, 150, 105, 0.02) 0%, transparent 50%);
+}
+
+/* Shimmer loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.05), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Table row hover */
+.table-row-hover {
+  transition: all 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.04), rgba(59, 130, 246, 0.02), transparent);
+}
+
+[data-theme="light"] .table-row-hover:hover {
+  background: linear-gradient(90deg, rgba(37, 99, 235, 0.04), rgba(37, 99, 235, 0.02), transparent);
+}
+
+/* Score ring */
+.score-ring {
+  background: conic-gradient(
+    var(--ring-color) calc(var(--ring-pct) * 1%),
+    rgba(30, 38, 66, 0.5) calc(var(--ring-pct) * 1%)
+  );
+}
+
+[data-theme="light"] .score-ring {
+  background: conic-gradient(
+    var(--ring-color) calc(var(--ring-pct) * 1%),
+    rgba(226, 232, 240, 0.8) calc(var(--ring-pct) * 1%)
+  );
+}
+
+/* Light theme Navbar overrides */
+[data-theme="light"] nav {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom-color: rgba(226, 232, 240, 0.8);
+}
+
+/* Light theme footer */
+[data-theme="light"] footer {
+  border-top-color: rgba(226, 232, 240, 0.6);
+}
+
+/* Tooltip overrides for Recharts in light mode are handled inline */
