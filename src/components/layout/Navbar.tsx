@@ -56,22 +56,22 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 border-b border-border/50 bg-primary/70 backdrop-blur-xl">
       {/* Top row: Logo + Row 1 + Controls */}
-      <div className="mx-auto flex h-14 max-w-7xl items-center gap-4 px-4 sm:px-6">
-        <Link href="/" className="flex items-center gap-3 group shrink-0">
+      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-2 sm:px-6">
+        <div className="flex items-center gap-3 shrink-0">
           <img
             src="/founder.jpg"
-            alt="HiC Finans"
-            className="h-11 w-11 rounded-full object-cover object-top shadow-lg shadow-accent/20 ring-2 ring-accent/30 transition-transform group-hover:scale-105"
+            alt="HiC Finans — Fatih"
+            className="h-20 w-20 rounded-full object-cover object-top shadow-xl shadow-accent/25 ring-3 ring-accent/40 cursor-pointer hover:scale-105 transition-transform"
           />
-          <div className="hidden sm:flex flex-col">
-            <span className="text-base font-bold tracking-tight" style={{ fontFamily: "var(--font-heading)" }}>
+          <Link href="/" className="hidden sm:flex flex-col group">
+            <span className="text-lg font-bold tracking-tight group-hover:text-accent transition-colors" style={{ fontFamily: "var(--font-heading)" }}>
               HiC Finans
             </span>
             <span className="text-[9px] font-medium tracking-widest text-text-muted uppercase">
               Temel Analiz
             </span>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
         <div className="flex-1 overflow-x-auto scrollbar-none">
           <NavRow items={ROW1} pathname={pathname} />
